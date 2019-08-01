@@ -4,25 +4,31 @@
 \newsectionwidth{0pt}  
 \usepackage{fancyhdr}
 \usepackage{multicol}
-\usepackage[bottom=1in,top=-0.2in,left=1in,right=1in]{geometry}
+\usepackage{calc}
+\usepackage[bottom=1.25in,top=-0.2in,left=0.75in,right=0.75in]{geometry}
 \renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{24pt}
 \setlength{\headsep}{24pt}
 \pagestyle{fancy}
 \long\def\/*#1*/{}
+\newlength{\remaining}
+\newcommand{\titleline}[1]{%
+    \setlength{\remaining}{\textwidth-\widthof{\textsc{#1}}}
+    \noindent\underline{\textsc{#1}\hspace*{\remaining}}\par}
 \cfoot{}
 
 \begin{document}
 	\thispagestyle{empty} % no header
 	\centerline{\bf \Huge{Nithin Raghavan}}
+    \vspace{1pt}
     \centerline{(678) 200-5839 | rnithin@berkeley.edu | rnithin1 (Github) | linkedin.com/in/nithinraghavan}
 	\begin{resume}
 	\vspace{-20pt}
 
-\section{\centerline{EDUCATION}}
+        \section{\titleline{\centerline{EDUCATION}}}
 		\vspace{6pt} 
 		{\bf University of California, Berkeley (Class of 2020)} \hfill \emph{Aug 2017 -- present} \\
-		Computer Science {\sl Bachelor of Arts}, Applied Mathematics {\sl Bachelor of Arts} \hfill (\emph{GPA: 3.59}) \\
+		Computer Science {\sl Bachelor of Arts}, Applied Mathematics {\sl Bachelor of Arts} \hfill (\emph{GPA: 3.67}) \\
 		\vspace{-20pt}
 		\begin{multicols}{2}
 		\begin{itemize}
@@ -37,7 +43,7 @@
 		\vspace{-25pt}
 		\vspace{6pt}
 		{\bf Georgia Institute of Technology} \hfill \emph{Aug 2015 -- May 2017} \\
-		Courses Taken while in High School
+		Courses Taken in High School
 		\vspace{-10pt}
 		\begin{multicols}{2}
 		\begin{itemize}
@@ -46,9 +52,20 @@
 		\end{itemize}
 		\end{multicols}
 		\vspace{-15pt}
-		\vspace{-2pt}
-		\section{\centerline{EXPERIENCE}}
-		{\bf Mobile Sensing Lab, UC Berkeley} \hfill \emph{Oct 2018 -- Present} \\
+		\vspace{-5pt}
+        \section{\titleline{\centerline{EXPERIENCE}}}
+		{\bf $\rightarrow$ Samsung Advanced Computing Lab} \hfill \emph{May 2019 -- Present} \\
+        \vspace{-10pt}
+        \begin{itemize}
+            \item Conducted extensive research on deep learning usecases and models as part of Samsung's GPU team
+            \item Analyzed several machine learning models for routes of optimization and quantization
+            \item Wrote and implemented OpenCL and OpenGL code 
+            \item Researched the graphics pipeline and became acquainted with AMD's compute and graphics architecture
+            \item Wrote and trained a neural network to perform ambient occlusion on complex scenes rendered with OpenGL
+            \item Modified and trained a neural network based on InstaGAN that converts a flat-rendered scene to a realistic, physically based rendered one  
+        \end{itemize}
+		\vspace{-10pt}
+		{\bf $\rightarrow$ Mobile Sensing Lab, UC Berkeley} \hfill \emph{Oct 2018 -- Present} \\
         \vspace{-10pt}
         \begin{itemize}
             \item Currently writing code implementing a parallelized Frank-Wolfe algorithm for dynamic traffic assignment in C++/CUDA using contraction
@@ -56,7 +73,7 @@
             \item Helping research the impact of different optimization models of routing behaviour on the Waze problem
         \end{itemize}
 		\vspace{-10pt}
-		{\bf RISE Lab, UC Berkeley} \hfill \emph{Jun 2018 -- Dec 2018} \\
+		{\bf $\rightarrow$ RISE Lab, UC Berkeley} \hfill \emph{Jun 2018 -- Dec 2018} \\
         \vspace{-10pt}
         \begin{itemize}
             \item Designed and implemented a data visualization tool for Jupyter Notebook for hyperparameter opti-
@@ -64,7 +81,7 @@ mization for Cirrus, a serverless machine learning framework
             \item Helped write code involving AWS Lambdas for model primitives such as logistic regression
         \end{itemize}
 		\vspace{-10pt}
-		{\bf IBM Almaden Research Center, Machine Learning Laboratory} \hfill \emph{Jul 2017 -- Aug 2017} \\
+		{\bf $\rightarrow$ IBM Almaden Research Center, Machine Learning Laboratory} \hfill \emph{Jul 2017 -- Aug 2017} \\
         \vspace{-10pt}
         \begin{itemize}
             \item Trained an artifical neural network with visual question answering abilities on Stanford’s CLEVR
@@ -72,17 +89,31 @@ dataset with 70\% overall accuracy
             \item Implemented sequence autoencoders, CNNs and LSTMs with Tensorflow and Keras
         \end{itemize}
 		\vspace{-10pt}
-		\section{\centerline{PROJECTS}}
-		\vspace{6pt}
-		{\bf Resource-Provisioning GPU Server} \hfill \emph{Dec 2017 -- present} \\
+        \section{\titleline{\centerline{PROJECTS}}}
+        \vspace{6pt}
+		{\bf $\rightarrow$ Resource-Provisioning GPU Server} \hfill \emph{Dec 2017 -- present} \\
         \vspace{-10pt}
         \begin{itemize}
             \item Developed a Python-based shell to automate on-demand request processing and resource provisioning
 in a GPU + CPU cluster
             \item Collaborated on a team to create a program that utilizes Slurm for cluster management and deploys tasks in Docker containers
         \end{itemize}
+        \vspace{-10pt}
+		{\bf $\rightarrow$ Software Renderer} \hfill \emph{Jul 2019} \\
+        \vspace{-10pt}
+        \begin{itemize}
+        \item Developed a software-based rasterizer and renderer with pixel and vertex shader support in C++
+        \item Capable of barycentric interpolation, backface culling and block-based rasterization
+        \end{itemize}
 		\vspace{-10pt}
-		{\bf TaxiFindMe} \hfill \emph{Apr 2018} \\
+		{\bf $\rightarrow$ LASSO/Wavelet Based Compressed Sensing} \hfill \emph{Jul 2019} \\
+        \vspace{-10pt}
+        \begin{itemize}
+        \item Computes LASSO on the matrix-vector product representation of the discrete wavelet transform of an input signal with orthogonal Daubechies wavelets
+        \item Can lossily compress audio/images to any amount or preprocess them for ML training purposes
+        \end{itemize}
+		\vspace{-10pt}
+		{\bf $\rightarrow$ TaxiFindMe} \hfill \emph{Apr 2018} \\
         \vspace{-10pt}
         \begin{itemize}
         \item Routing web app that helps New Yorkers find the best spot to minimize taxi waiting time, taking into
@@ -91,14 +122,14 @@ account travel time and time of day
         \item Reduced query time up to 94\% from the naive implementation
         \end{itemize}
 		\vspace{-10pt}
-		{\bf ShirtMapper} \hfill \emph{Jan 2018} \\
+		{\bf $\rightarrow$ ShirtMapper} \hfill \emph{Jan 2018} \\
         \vspace{-10pt}
         \begin{itemize}
             \item App that resizes images of custom shirts and maps them onto people
             \item Utilizes OpenCV and Scipy, and uses Haar classifiers for edge detection; frontend employs React Native
         \end{itemize}
 		\vspace{-10pt}
-		\section{\centerline{SKILLS}}
+        \section{\titleline{\centerline{SKILLS}}}
 		\vspace{6pt}
 		{\bf Awards:} Exploravision National Contest \hfill \emph{2016} \\
         \vspace{-10pt}
@@ -108,8 +139,8 @@ account travel time and time of day
         \vspace{-10pt}
         {\bf Models/Algorithms:} Regression/classification (ridge, logistic, SVM, decision trees, OLS), PCA/SVD, \\
         \vspace{-0pt}
-        \hspace{100pt} ensemble learning, k-means, deep learning (CNNs, LSTMs), Frank-Wolfe \\
-            {\bf Frameworks/Softwares:} Numpy, Scipy, Sk-learn, Pytorch, OpenCV, Docker, Slurm, d3js, CUDA \\
+        \hspace{100pt} ensemble learning, k-means, deep learning (CNNs, LSTMs, GANs), Frank-Wolfe \\
+            {\bf Frameworks/Softwares:} Numpy, Scipy, Pytorch, OpenCV, Docker, Slurm, d3js, OpenCL, OpenGL \\
 			{\bf Programming Languages:} Python, Java, C, C++, C\#, Bash, Latex, SQL, JavaScript, Matlab \\
 			{\bf Operating Systems:} Unix-like systems (Linux, FreeBSD, Mac OS X), Windows \\
 			{\bf Certifications:} Android Development (University of Maryland through Coursera) \\
