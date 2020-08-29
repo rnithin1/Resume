@@ -1,0 +1,105 @@
+\documentclass{res} 
+
+\usepackage{pifont}
+\newsectionwidth{0pt}  
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{textcomp}
+\usepackage{calc}
+\usepackage[bottom=1.25in,top=-0.2in,left=0.75in,right=0.75in]{geometry}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{24pt}
+\setlength{\headsep}{24pt}
+\pagestyle{fancy}
+\long\def\/*#1*/{}
+\newlength{\remaining}
+\newcommand{\titleline}[1]{%
+    \setlength{\remaining}{\textwidth-\widthof{\textsc{#1}}}
+    \noindent\underline{\textsc{#1}\hspace*{\remaining}}\par}
+\cfoot{}
+
+\begin{document}
+	\thispagestyle{empty} % no header
+	\centerline{\bf \Huge{Nithin Raghavan}}
+    \vspace{1pt}
+    \centerline{(678) 200-5839 | rnithin@berkeley.edu | rnithin1 (Github)  | csua.org/{\raise.17ex\hbox{$\scriptstyle\sim$}}rnithin}
+	\begin{resume}
+	\vspace{-20pt}
+
+        \section{\titleline{\centerline{EDUCATION}}}
+		\vspace{6pt} 
+		{\bf University of California, Berkeley (2017 - 2021)} \hfill \emph{Aug 2017 -- present} \\
+		Computer Science {\sl Bachelor of Arts}, Applied Mathematics {\sl Bachelor of Arts} \hfill (\emph{GPA: 3.67}) \\
+		\vspace{-20pt}
+		\begin{multicols}{2}
+		\begin{itemize}
+		\item CS61B: Data Structures%{\it (Intended)}
+		\item CS170: Efficient Algorithms
+		\item EE127: Optimization Models and Applications
+		\item Math 128a: Numerical Analysis
+		\item Math 126: Partial Differential Equations
+		\item CS189: Introduction to Machine Learning %{\it (Intended)}
+		\end{itemize}
+		\end{multicols}
+%		\vspace{-25pt}
+%		\vspace{6pt}
+        \vspace{-10pt}
+        \section{\titleline{\centerline{EXPERIENCE}}}
+		{\bf $\rightarrow$ Visual Computing Lab, UC Berkeley} \hfill \emph{Oct 2019 -- Present} \\
+        \vspace{-10pt}
+        \begin{itemize}
+            \item Worked with several graduate students to submit a paper to NeurIPS on a new concept in MLP theory: an input embedding of Fourier Features enables a low-dimensional MLP to learn high frequency functions
+            \item Helped research volumetric octree compression on a voxel grid for the Neural Radiance Functions (NeRF) paper
+            \item Currently researching several concepts in graphics involving radiance transfer and volumetric rendering
+        \end{itemize}
+		\vspace{-10pt}
+		{\bf $\rightarrow$ Ford Greenfield Labs} \hfill \emph{June 2020 -- August 2020} \\
+        \vspace{-10pt}
+        \begin{itemize}
+            \item Worked on a neural network architecture to generate depth and segmentation maps from a single RGB image
+            \item Reduces cost to generate such maps to zero, compared to thousands of dollars currently required 
+            \item Invention disclosure (that might result in a patent) submitted for consideration by Ford lawyers 
+            \item Currently writing a paper to be submitted to CVPR
+        \end{itemize}
+		\vspace{-10pt}
+		{\bf $\rightarrow$ Samsung Advanced Computing Lab} \hfill \emph{May 2019 -- August 2019} \\
+        \vspace{-10pt}
+        \begin{itemize}
+            \item Conducted extensive research on the potential routes of optimization and quantization of deep learning models such as MobileNet, R-FCN, SRCNN and ESRGAN as part of Samsung's GPU team
+            \item Researched the graphics pipeline and became acquainted with Samsung's future compute architecture, and wrote + ran 2D register-blocked GEMM kernels with increased WPT in OpenCL on Samsung architecture
+            \item Wrote and trained two neural networks; the first to perform ambient occlusion on complex OpenGL-rendered scenes, and the second to convert a flat-rendered scene to a lifelike, physically based rendered one  
+        \end{itemize}
+        \section{\titleline{\centerline{PROJECTS}}}
+		{\bf $\rightarrow$ Software Renderer} \hfill \emph{Jul 2019} \\
+        \vspace{-10pt}
+        \begin{itemize}
+        \item Developed a software-based rasterizer and renderer with pixel and vertex shader support in C++
+        \item Capable of barycentric interpolation, backface culling and block-based rasterization
+        \end{itemize}
+		\vspace{-10pt}
+		{\bf $\rightarrow$ Resource-Provisioning GPU Server} \hfill \emph{Dec 2017 -- present} \\
+        \vspace{-10pt}
+        \begin{itemize}
+            \item Developed a Python-based shell to automate on-demand request processing and resource provisioning
+in a GPU + CPU cluster
+            \item Collaborated on a team to create a program that utilizes Slurm for cluster management and deploys tasks in Docker containers
+        \end{itemize}
+        \vspace{-10pt}
+		{\bf $\rightarrow$ LASSO/Wavelet Based Compressed Sensing} \hfill \emph{Jul 2019} \\
+        \vspace{-10pt}
+        \begin{itemize}
+        \item Computes LASSO on the matrix-vector product representation of the discrete wavelet transform of an input signal with orthogonal Daubechies wavelets
+        \item Can lossily compress audio/images to any amount or preprocess them for ML training purposes
+        \end{itemize}
+        \section{\titleline{\centerline{SKILLS}}}
+		\vspace{6pt}
+        {\bf Models/Algorithms:} Regression/classification (ridge, logistic, SVM, decision trees, OLS), PCA/SVD, \\
+        \vspace{-0pt}
+        \hspace{100pt} ensemble learning, k-means, deep learning (CNNs, LSTMs, GANs), Frank-Wolfe \\
+            {\bf Frameworks/Softwares:} Numpy, Scipy, Pytorch, OpenCV, Docker, Slurm, d3js, OpenCL, OpenGL \\
+			{\bf Programming Languages:} Python, Java, C, C++, C\#, Bash, Latex, SQL, JavaScript, Matlab \\
+			{\bf Operating Systems:} Unix-like systems (Linux, FreeBSD, Mac OS X), Windows \\
+		\vspace{-6pt}
+			
+	\end{resume} 
+\end{document}
